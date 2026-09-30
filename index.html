@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Merve Türk Aydilek ile sosyal medya desteği, sosyal medya tasarımı, Instagram hesap desteği, telefon veri aktarımı, fotoğraf yedekleme, rehber aktarımı ve kartvizit tasarımı.">
+    <meta name="theme-color" content="#102a4d">
+    <meta name="robots" content="index,follow">
+    <title>Merve Türk Aydilek | Dijital Destek</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+      :root {
+        --navy: #102a4d;
+        --navy-2: #173b68;
+        --ink: #102238;
+        --muted: #5d6c7c;
+        --blue: #2c9ed1;
+        --sky: #e9f7fd;
+        --sky-2: #d6f1fc;
+        --paper: #f8fbfd;
+        --white: #ffffff;
+        --line: #d8e5ec;
+        --shadow: 0 22px 55px rgba(18, 50, 83, .12);
+        --radius: 1.3rem;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #58bce6; outline-offset: 4px; }
+      img { display: block; max-width: 100%; }
+      .container { width: min(1120px, calc(100% - 2.5rem)); margin: 0 auto; }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: .55rem;
+        margin: 0 0 .9rem;
+        color: var(--navy-2);
+        font-size: .78rem;
+        font-weight: 800;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+      }
+      .eyebrow::before { content: ""; width: .48rem; height: .48rem; border-radius: 99px; background: var(--blue); box-shadow: 0 0 0 5px rgba(44,158,209,.15); }
+      h1, h2, h3, p { margin-top: 0; }
+      h1, h2, h3 { color: var(--navy); line-height: 1.08; letter-spacing: -.035em; }
+      h1 { max-width: 760px; margin-bottom: 1.25rem; font-size: clamp(2.6rem, 6vw, 5.6rem); }
+      h2 { margin-bottom: .9rem; font-size: clamp(2rem, 3.8vw, 3.4rem); }
+      h3 { margin-bottom: .55rem; font-size: 1.2rem; }
+      .lead { max-width: 690px; color: #43576d; font-size: clamp(1.05rem, 1.5vw, 1.22rem); }
+      .section { padding: 6.4rem 0; }
+      .section-head { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, .75fr); gap: 2.5rem; align-items: end; margin-bottom: 2.4rem; }
+      .section-head .lead { margin: 0; }
+
+      .site-header { position: sticky; top: 0; z-index: 20; background: rgba(248,251,253,.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(216,229,236,.76); }
+      .nav { min-height: 5.3rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+      .brand { display: inline-flex; align-items: center; gap: .68rem; min-width: 0; }
+      .brand-crop { position: relative; flex: 0 0 4.55rem; width: 4.55rem; height: 1.96rem; overflow: hidden; }
+      .brand-crop img { position: absolute; width: 6.2rem; max-width: none; left: 50%; top: -1.2rem; transform: translateX(-50%); filter: contrast(1.08); }
+      .brand-copy { display: grid; line-height: 1.1; }
+      .brand-copy strong { color: var(--navy); font-size: .98rem; letter-spacing: -.02em; }
+      .brand-copy span { margin-top: .18rem; color: var(--muted); font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+      .nav-links { display: flex; align-items: center; gap: 1.3rem; color: #456078; font-size: .91rem; font-weight: 700; }
+      .nav-links a { transition: color .2s ease; }
+      .nav-links a:hover { color: var(--blue); }
+      .nav-cta { padding: .7rem 1rem; color: white !important; background: var(--navy); border-radius: .7rem; }
+      .menu-toggle { display: none; padding: .65rem; color: var(--navy); background: transparent; border: 1px solid var(--line); border-radius: .65rem; font: inherit; }
+
+      .hero { position: relative; overflow: hidden; padding: 6.5rem 0 5.2rem; background: radial-gradient(circle at 84% 10%, #d2f1fd 0, rgba(210,241,253,0) 31%), linear-gradient(122deg, #f9fcff 0%, #edf8fd 100%); }
+      .hero::after { content: ""; position: absolute; width: 42rem; height: 42rem; right: -25rem; bottom: -27rem; border: 1px solid rgba(43,157,208,.15); border-radius: 50%; box-shadow: 0 0 0 3.5rem rgba(43,157,208,.045), 0 0 0 7rem rgba(43,157,208,.03); }
+      .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); gap: 3.4rem; align-items: center; }
+      .hero h1 em { color: var(--blue); font-style: normal; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+      .button { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 3.2rem; padding: .82rem 1.15rem; border: 1px solid transparent; border-radius: .78rem; font-size: .95rem; font-weight: 800; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+      .button:hover { transform: translateY(-2px); }
+      .button-primary { color: white; background: var(--navy); box-shadow: 0 12px 25px rgba(16,42,77,.2); }
+      .button-secondary { color: var(--navy); background: rgba(255,255,255,.8); border-color: var(--line); }
+      .button svg { width: 1.1rem; height: 1.1rem; }
+      .hero-note { display: flex; align-items: center; gap: .65rem; margin: 1.2rem 0 0; color: #5c7182; font-size: .86rem; }
+      .hero-note svg { width: 1.1rem; color: var(--blue); flex: 0 0 auto; }
+      .hero-side { position: relative; min-height: 28rem; }
+      .logo-orbit { position: absolute; inset: 1.2rem 0 0 2.8rem; display: grid; place-items: center; border: 1px solid rgba(33,128,176,.25); border-radius: 50%; background: rgba(255,255,255,.42); }
+      .logo-orbit::before, .logo-orbit::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(33,128,176,.15); }
+      .logo-orbit::before { inset: 1.5rem; }
+      .logo-orbit::after { inset: 3.4rem; border-style: dashed; }
+      .hero-mta { position: relative; z-index: 1; display: block; padding: 0 .12em .08em 0; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: clamp(4.8rem, 10vw, 7.8rem); font-weight: 700; letter-spacing: .02em; line-height: .82; text-shadow: 0 .38rem .9rem rgba(16,42,77,.13); }
+      .float-card { position: absolute; z-index: 2; display: flex; align-items: center; gap: .7rem; padding: .85rem .95rem; color: var(--navy); background: white; border: 1px solid var(--line); border-radius: .85rem; box-shadow: var(--shadow); font-size: .82rem; font-weight: 800; }
+      .float-card svg { width: 1.35rem; height: 1.35rem; color: var(--blue); }
+      .float-card.one { left: 0; top: 5.8rem; }
+      .float-card.two { right: -.2rem; bottom: 1.5rem; }
+
+      .service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+      .service-card { position: relative; min-height: 15.5rem; padding: 1.45rem; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: var(--radius); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+      .service-card:hover { transform: translateY(-5px); border-color: #a9dcef; box-shadow: 0 18px 34px rgba(16,42,77,.1); }
+      .service-card:nth-child(1), .service-card:nth-child(5) { grid-column: span 2; }
+      .service-icon { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; margin-bottom: 2rem; color: var(--navy); background: var(--sky); border-radius: .85rem; }
+      .service-icon svg { width: 1.35rem; height: 1.35rem; }
+      .service-icon.social-icons { display: inline-flex; width: auto; padding: 0 .7rem; gap: .42rem; }
+      .service-icon.social-icons svg { width: 1.15rem; height: 1.15rem; }
+      .service-card p { max-width: 31rem; margin: 0; color: var(--muted); font-size: .92rem; }
+      .service-index { position: absolute; right: 1.1rem; bottom: .7rem; color: #cfeaf6; font-size: 3.3rem; font-weight: 800; letter-spacing: -.08em; line-height: 1; }
+      .service-card h3, .service-card p { position: relative; z-index: 1; }
+
+      .pain-section { padding: 1rem 0 6.4rem; }
+      .pain-panel { position: relative; overflow: hidden; padding: clamp(2rem, 5vw, 4rem); color: white; background: linear-gradient(135deg, var(--navy) 0%, #1d4d78 100%); border-radius: 1.8rem; }
+      .pain-panel::before { content: ""; position: absolute; width: 29rem; height: 29rem; right: -12rem; top: -12rem; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; box-shadow: 0 0 0 3rem rgba(255,255,255,.04), 0 0 0 6rem rgba(255,255,255,.025); }
+      .pain-panel > * { position: relative; z-index: 1; }
+      .pain-panel h2 { max-width: 650px; color: white; }
+      .pain-panel .lead { max-width: 620px; color: #d5e7f2; }
+      .pain-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-top: 2rem; }
+      .pain-item { padding: .95rem 1rem; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: .75rem; color: #f5fbff; font-size: .93rem; }
+
+      .backup-grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(320px, .82fr); gap: 4rem; align-items: center; }
+      .backup-copy .lead { margin-bottom: 1.65rem; }
+      .check-list { display: grid; gap: .72rem; margin: 0; padding: 0; list-style: none; }
+      .check-list li { display: flex; gap: .72rem; align-items: flex-start; color: #41566d; }
+      .check-list svg { flex: 0 0 auto; width: 1.25rem; margin-top: .17rem; color: #1689bd; }
+      .backup-visual { position: relative; min-height: 27rem; padding: 1.3rem; overflow: hidden; background: linear-gradient(150deg, #daf4fd, #effaff); border: 1px solid #c4e5f2; border-radius: 1.7rem; }
+      .backup-visual::before { content: ""; position: absolute; width: 18rem; height: 18rem; right: -6rem; top: -5rem; border: 1px solid #a8ddeb; border-radius: 50%; }
+      .phone { position: absolute; z-index: 1; bottom: 0; left: 50%; width: 13rem; height: 24rem; padding: .55rem; transform: translateX(-50%); background: #17314e; border: 7px solid #17314e; border-bottom: 0; border-radius: 2.3rem 2.3rem 0 0; box-shadow: 0 18px 36px rgba(16,42,77,.2); }
+      .phone::before { content: ""; position: absolute; z-index: 2; top: .25rem; left: 50%; width: 4.5rem; height: .7rem; transform: translateX(-50%); background: #17314e; border-radius: 0 0 1rem 1rem; }
+      .phone-screen { height: 100%; padding: 2.4rem .75rem 1rem; overflow: hidden; background: #fbfeff; border-radius: 1.75rem 1.75rem 0 0; }
+      .phone-label { color: var(--navy); font-size: .76rem; font-weight: 850; }
+      .file-row { display: flex; align-items: center; gap: .45rem; margin-top: .65rem; padding: .47rem; background: #edf8fd; border-radius: .52rem; color: #34546f; font-size: .64rem; font-weight: 700; }
+      .file-row svg { width: .85rem; color: var(--blue); }
+      .sync-pill { position: absolute; z-index: 3; top: 3.4rem; right: 1.15rem; display: flex; gap: .45rem; align-items: center; padding: .65rem .75rem; background: white; border: 1px solid #cbe7f2; border-radius: .72rem; color: var(--navy); box-shadow: 0 10px 25px rgba(16,42,77,.1); font-size: .75rem; font-weight: 800; }
+      .sync-pill svg { width: 1.05rem; color: var(--blue); }
+      .protect-card { position: absolute; z-index: 3; bottom: 2.1rem; left: 1.1rem; max-width: 10rem; padding: .8rem; background: white; border: 1px solid #cbe7f2; border-radius: .72rem; box-shadow: 0 10px 25px rgba(16,42,77,.1); color: var(--navy); font-size: .75rem; font-weight: 800; }
+      .protect-card span { display: block; margin-top: .22rem; color: var(--muted); font-size: .68rem; font-weight: 600; }
+
+      .transfer { background: #eef8fc; }
+      .transfer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+      .transfer-card { padding: 1.6rem; background: white; border: 1px solid #d3e6ee; border-radius: 1.05rem; }
+      .transfer-card .mini-icon { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; margin-bottom: 1.1rem; color: var(--blue); background: var(--sky); border-radius: .75rem; }
+      .transfer-card .mini-icon svg { width: 1.3rem; }
+      .transfer-card p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+      .support-wrap { display: grid; grid-template-columns: minmax(0,.85fr) minmax(360px, 1fr); gap: 4.4rem; align-items: start; }
+      .support-list { display: grid; gap: .8rem; }
+      .support-row { display: flex; align-items: center; gap: .8rem; padding: .95rem 0; border-bottom: 1px solid var(--line); color: #39526a; font-weight: 750; }
+      .support-row svg { width: 1.15rem; color: var(--blue); }
+      .official-card { padding: 2rem; color: white; background: linear-gradient(145deg, #0f2d50, #1c5c86); border-radius: 1.45rem; box-shadow: var(--shadow); }
+      .official-card .eyebrow { color: #ccecf9; }
+      .official-card .eyebrow::before { background: #80d4f3; box-shadow: 0 0 0 5px rgba(128,212,243,.16); }
+      .official-card h3 { color: white; font-size: 1.65rem; }
+      .official-card p { color: #d5e7f2; }
+      .official-rule { margin-top: 1.3rem; padding: .95rem; color: #eefaff; background: rgba(255,255,255,.1); border-left: 3px solid #80d4f3; border-radius: .2rem .6rem .6rem .2rem; font-size: .9rem; }
+
+      .trust { padding-top: 1.4rem; }
+      .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .trust-card { padding: 1.6rem; background: white; border: 1px solid var(--line); border-radius: 1rem; }
+      .trust-card svg { width: 1.65rem; height: 1.65rem; margin-bottom: 1.3rem; color: var(--blue); }
+      .trust-card p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+      .steps { position: relative; padding: 6.4rem 0; color: white; background: var(--navy); }
+      .steps .eyebrow { color: #bfe9f8; }
+      .steps .eyebrow::before { background: var(--blue); }
+      .steps h2 { max-width: 630px; color: white; }
+      .steps .lead { color: #c9dde9; }
+      .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .9rem; margin-top: 2.5rem; }
+      .step { min-height: 13rem; padding: 1.4rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 1rem; }
+      .step-number { display: block; margin-bottom: 2.4rem; color: #78d0f0; font-size: 1rem; font-weight: 850; }
+      .step h3 { color: white; }
+      .step p { margin: 0; color: #c9dce7; font-size: .9rem; }
+
+      .faq-layout { display: grid; grid-template-columns: minmax(0,.72fr) minmax(380px,1.1fr); gap: 4rem; align-items: start; }
+      .faq-list { display: grid; gap: .7rem; }
+      details { background: white; border: 1px solid var(--line); border-radius: .85rem; transition: border-color .2s ease; }
+      details[open] { border-color: #a9d9eb; }
+      summary { position: relative; padding: 1.05rem 3rem 1.05rem 1.1rem; cursor: pointer; color: var(--navy); font-size: .98rem; font-weight: 780; list-style: none; }
+      summary::-webkit-details-marker { display: none; }
+      summary::after { content: "+"; position: absolute; right: 1.1rem; top: .77rem; color: var(--blue); font-size: 1.45rem; font-weight: 450; }
+      details[open] summary::after { content: "−"; }
+      .answer { padding: 0 1.1rem 1.15rem; color: var(--muted); font-size: .92rem; }
+      .answer p { margin: 0; }
+
+      .contact-section { padding-top: 0; }
+      .contact-panel { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0,1fr) minmax(280px,.7fr); gap: 2rem; align-items: center; padding: clamp(2rem,5vw,4.1rem); color: white; background: linear-gradient(125deg, #1180b2, #1b527f); border-radius: 1.7rem; }
+      .contact-panel::after { content: ""; position: absolute; width: 24rem; height: 24rem; right: -8rem; bottom: -12rem; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; box-shadow: 0 0 0 2.5rem rgba(255,255,255,.05); }
+      .contact-panel > * { position: relative; z-index: 1; }
+      .contact-panel h2 { max-width: 650px; color: white; }
+      .contact-panel p { max-width: 630px; margin: 0; color: #d9f0fa; }
+      .contact-box { padding: 1.2rem; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); border-radius: 1rem; }
+      .contact-box strong { display: block; color: white; font-size: 1.06rem; }
+      .contact-box span { display: block; margin: .4rem 0 1.1rem; color: #d9f0fa; font-size: .84rem; }
+      .contact-placeholder { display: flex; align-items: center; gap: .55rem; padding: .7rem .75rem; color: #ecfaff; background: rgba(4,39,68,.18); border-radius: .6rem; font-size: .8rem; }
+      .contact-placeholder svg { width: 1rem; }
+
+      footer { padding: 2.4rem 0; background: #0c243f; color: #d0e0ea; }
+      .footer-row { display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+      .footer-brand { color: white; font-weight: 800; }
+      .footer-row small { color: #9db8c8; }
+
+      @media (max-width: 940px) {
+        .hero-grid, .backup-grid, .support-wrap, .faq-layout, .contact-panel { grid-template-columns: 1fr; }
+        .hero { padding-top: 4.6rem; }
+        .hero-side { min-height: 23rem; max-width: 31rem; width: 100%; margin: 0 auto; }
+        .section-head { grid-template-columns: 1fr; gap: .35rem; }
+        .service-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .service-card:nth-child(1), .service-card:nth-child(5) { grid-column: span 1; }
+        .pain-list, .step-grid { grid-template-columns: repeat(2, 1fr); }
+        .backup-visual { max-width: 32rem; width: 100%; margin: 0 auto; }
+      }
+      @media (max-width: 760px) {
+        .container { width: min(100% - 2rem, 1120px); }
+        .nav { min-height: 4.6rem; }
+        .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+        .nav-links { position: absolute; left: 1rem; right: 1rem; top: calc(100% + .55rem); display: none; flex-direction: column; align-items: stretch; gap: .15rem; padding: .65rem; background: white; border: 1px solid var(--line); border-radius: .9rem; box-shadow: var(--shadow); }
+        .nav-links.is-open { display: flex; }
+        .nav-links a { padding: .75rem .8rem; border-radius: .55rem; }
+        .nav-links a:hover { background: var(--sky); }
+        .nav-cta { text-align: center; }
+        .brand-copy span { display: none; }
+        .section { padding: 4.6rem 0; }
+        .pain-section { padding-bottom: 4.6rem; }
+        .service-grid, .transfer-grid, .trust-grid, .pain-list, .step-grid { grid-template-columns: 1fr; }
+        .service-card, .service-card:nth-child(1), .service-card:nth-child(5) { min-height: auto; grid-column: auto; }
+        .service-icon { margin-bottom: 1.4rem; }
+        .step { min-height: auto; }
+        .step-number { margin-bottom: 1.15rem; }
+        .hero-side { min-height: 20rem; }
+        .logo-orbit { inset: 1rem .3rem 0 1.2rem; }
+        .float-card.one { top: 2rem; }
+        .float-card.two { bottom: .6rem; }
+        .backup-visual { min-height: 23rem; }
+        .phone { width: 11.4rem; height: 21rem; }
+        .sync-pill { top: 2rem; right: .6rem; }
+        .protect-card { bottom: 1.2rem; left: .6rem; }
+        .footer-row { flex-direction: column; align-items: flex-start; }
+      }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .001ms !important; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#anasayfa" aria-label="Merve Türk Aydilek ana sayfa">
+          <span class="brand-crop" aria-hidden="true"><img src="assets/mta-logo.jpg" alt=""></span>
+          <span class="brand-copy"><strong>Merve Türk Aydilek</strong><span>Dijital Destek</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="site-menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <nav id="site-menu" class="nav-links" aria-label="Ana menü">
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#yaklasim">Yaklaşım</a>
+          <a href="#sss">Sık Sorulanlar</a>
+          <a class="nav-cta" href="#iletisim">İletişim</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="anasayfa">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Sosyal medya · dijital destek · tasarım</p>
+            <h1 id="hero-title">Dijital hayatınızda <em>güvenli ve düzenli</em> destek.</h1>
+            <p class="lead">Sosyal medya tasarımı ve hesap desteğinden, fotoğraf–belge yedeklemeye, rehber aktarımından yeni telefona geçişe kadar ihtiyaç duyduğunuz dijital işleri anlaşılır bir süreçle yönetmenize yardımcı oluyorum.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#hizmetler">Hizmetleri İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a class="button button-secondary" href="#iletisim">İletişim Bilgisi Al</a>
+            </div>
+            <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>Güvenli yöntemleri önceleyen, kullanıcı dostu destek yaklaşımı.</p>
+          </div>
+          <div class="hero-side" aria-label="Merve Türk Aydilek markası">
+            <div class="logo-orbit" aria-label="MTA"><span class="hero-mta" aria-hidden="true">MTA</span></div>
+            <div class="float-card one"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 2v6M17 2v6M3 10h18"/></svg>Planlı dijital düzen</div>
+            <div class="float-card two"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22a8 8 0 1 0-8-8c0 2.7 1.4 5.1 3.5 6.5L12 22Z"/><path d="M12 6v6l4 2"/></svg>Pratik ve anlaşılır</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="hizmetler" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-head">
+            <div><p class="eyebrow">Hizmet alanları</p><h2 id="services-title">Dijital dünyadaki gündelik ihtiyaçlarınız için tek noktada destek.</h2></div>
+            <p class="lead">Birbiriyle bağlantılı sosyal medya, tasarım, telefon ve veri düzeni ihtiyaçlarını sade ve güvenilir bir şekilde ele alıyorum.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card"><span class="service-icon social-icons" aria-label="WhatsApp, Instagram ve Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.5 7.5L3.5 20.5l1.4-4.2A8.5 8.5 0 1 1 20.5 11.6Z"/><path d="M8.8 7.8c.3 3 2.3 5 5.3 5.4l1.1-1.1c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.4.3.7-.4 1-1.4 1.5-2.3 1.3-4-1-6.5-3.6-7.3-7.4-.2-.9.3-1.9 1.3-2.3.3-.1.6 0 .7.3l.7 1.5c.1.2.1.5-.1.7Z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.7" r=".85" fill="currentColor" stroke="none"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.8 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.6 1.7-1.6H17V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V9.9H8v3.1h2.8v8h3Z"/></svg></span><h3>Sosyal Medya Tasarımı</h3><p>Gönderi, hikâye, profil ve kampanya görselleriyle hesabınızın daha bütünlüklü ve profesyonel görünmesine destek.</p><span class="service-index">01</span></article>
+            <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 2 5-6"/></svg></span><h3>Hesap Geliştirme</h3><p>Profil düzeni, içerik yapısı, paylaşım planı ve organik büyümeye yönelik uygulanabilir öneriler.</p><span class="service-index">02</span></article>
+            <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 8v4M12 16h.01"/></svg></span><h3>Hesap Sorunları</h3><p>Kısıtlama, giriş, güvenlik ve kurtarma konularında platformların resmî süreçlerini anlamaya yardımcı destek.</p><span class="service-index">03</span></article>
+            <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6.5" y="2" width="11" height="20" rx="2.1"/><path d="M10 18.2h4"/><path d="M9.5 5.8h5"/></svg></span><h3>Telefon ve Veri Yedekleme</h3><p>Önemli fotoğraf, video ve belgelerin kaybolmadan önce düzenlenmesi ve güvenli yedeklenmesi.</p><span class="service-index">04</span></article>
+            <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.1"/><circle cx="12" cy="8.1" r="2"/><path d="M8.8 14.6c.7-1.7 1.8-2.5 3.2-2.5s2.5.8 3.2 2.5"/><path d="M10.2 18h3.6"/></svg></span><h3>Rehber Aktarımı</h3><p>Telefonunuz değişse bile kişileriniz kaybolmasın diye rehber yedekleme, senkronizasyon ve aktarım desteği.</p><span class="service-index">05</span></article>
+            <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/><path d="M2 9h3m14 0h3"/></svg></span><h3>Yeni Telefona Geçiş</h3><p>Fotoğraf, kişi, belge ve uygun verilerin yeni cihazınıza taşınması sırasında düzenli kontrol.</p><span class="service-index">06</span></article>
+            <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="10" r="1.6"/><path d="M5.6 15.4c.5-1.5 1.3-2.2 2.4-2.2s1.9.7 2.4 2.2M13.5 9h4.5M13.5 13h4.5M13.5 16h3"/></svg></span><h3>Kartvizit Tasarımı</h3><p>Kişisel veya kurumsal kullanım için modern, baskıya uygun ve bilgileri net taşıyan kartvizit tasarımları.</p><span class="service-index">07</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pain-section" aria-labelledby="why-title">
+        <div class="container"><div class="pain-panel"><p class="eyebrow">Neden destek?</p><h2 id="why-title">Bu dijital işleri tek başınıza çözmek zorunda değilsiniz.</h2><p class="lead">Küçük görünen bir ayar, yedek veya erişim adımı günlük hayatta önemli bir fark yaratabilir. İhtiyacınızı birlikte netleştirip uygun yolu belirlemek için buradayım.</p><div class="pain-list"><div class="pain-item">“Telefonumu değiştirdim, kişilerim kayboldu.”</div><div class="pain-item">“Instagram hesabıma giriş yapamıyorum.”</div><div class="pain-item">“Fotoğraflarım silinmesin istiyorum.”</div><div class="pain-item">“Hesabım daha profesyonel görünsün.”</div><div class="pain-item">“Kartvizit tasarımına ihtiyacım var.”</div><div class="pain-item">“Kısıtlama sonrası ne yapacağımı bilmiyorum.”</div></div></div></div>
+      </section>
+
+      <section class="section" id="yaklasim" aria-labelledby="backup-title">
+        <div class="container backup-grid">
+          <div class="backup-copy"><p class="eyebrow">Verileriniz kaybolmadan önce</p><h2 id="backup-title">Telefon bozulduktan sonra değil, önce önlem alın.</h2><p class="lead">Düzenli yedekleme; fotoğraflarınızı, önemli belgelerinizi ve rehberinizi cihaz değişikliği ya da beklenmedik durumlarda daha kontrollü yönetebilmenize yardımcı olur.</p><ul class="check-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Fotoğraf ve videolar için anlaşılır bir yedekleme düzeni.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Önemli belgelerin kategorize edilmesi ve saklama seçeneklerinin kontrolü.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Telefon değişikliği öncesinde kişiler ve hesaplar için hazırlık.</span></li></ul></div>
+          <div class="backup-visual" aria-label="Telefon verileri yedekleme illüstrasyonu"><div class="sync-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 5v4h4M4 13a8.1 8.1 0 0 0 15.5 2M20 19v-4h-4"/></svg>Yedekleme düzeni</div><div class="protect-card">Düzenli kontrol<span>Önemli dosyalarınız için</span></div><div class="phone"><div class="phone-screen"><div class="phone-label">Dijital düzen</div><div class="file-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 15 4-4 3 3 2-2 3 3"/></svg>Fotoğraflar</div><div class="file-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Belgeler</div><div class="file-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Kişiler</div><div class="file-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Hesap güvenliği</div></div></div></div>
+        </div>
+      </section>
+
+      <section class="section transfer" aria-labelledby="transfer-title">
+        <div class="container"><div class="section-head"><div><p class="eyebrow">Rehber &amp; telefon geçişi</p><h2 id="transfer-title">Telefonunuz değişse de kişileriniz kaybolmasın.</h2></div><p class="lead">Yeni cihazınıza geçerken fotoğraf, kişi, belge ve uygun uygulama verilerini daha düzenli biçimde taşımanıza yardımcı oluyorum.</p></div><div class="transfer-grid"><article class="transfer-card"><span class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 18a4.6 4.6 0 1 1 1.5-9A5.5 5.5 0 0 1 19 11.5 3.5 3.5 0 0 1 18 18Z"/><path d="M12 10v7m0-7-3 3m3-3 3 3"/></svg></span><h3>Rehberiniz güvende kalsın</h3><p>Google veya iCloud kişi senkronizasyonunun kontrolü, yeni telefona rehber aktarımı ve dağınık kişilerin düzenlenmesine yönelik destek.</p></article><article class="transfer-card"><span class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 3h5v5M4 20l16-16"/><path d="M8 3H3v5M21 16v5h-5"/></svg></span><h3>Cihaz geçişini planlayın</h3><p>Android → Android, iPhone → iPhone ve uygun olduğu durumlarda Android ↔ iPhone geçişlerinde aktarılabilecek veriler birlikte değerlendirilir.</p></article></div></div>
+      </section>
+
+      <section class="section" aria-labelledby="social-title">
+        <div class="container support-wrap"><div><p class="eyebrow">Sosyal medya desteği</p><h2 id="social-title">Sosyal medyada sorun yaşadığınızda ne yapacağınızı bilin.</h2><p class="lead">Şifre, giriş, kısıtlama, güvenlik ve doğrulama gibi durumlarda süreci daha anlaşılır hale getirmek için yanınızdayım.</p><div class="support-list"><div class="support-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>Hesap erişimi ve şifre kurtarma seçenekleri</div><div class="support-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>Hesap güvenliği ve iki aşamalı doğrulama ayarları</div><div class="support-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>Kısıtlama, doğrulama ve itiraz adımlarını anlama</div><div class="support-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>Daha düzenli bir profil ve içerik yapısı kurma</div></div></div><aside class="official-card"><p class="eyebrow">Güvenli kapsam</p><h3>Resmî süreçler, doğru yönlendirme.</h3><p>Hesap sorunlarında amaç; platformların sağladığı kurtarma, doğrulama ve itiraz yöntemlerini doğru şekilde izlemeye yardımcı olmaktır.</p><div class="official-rule">Başkalarına ait hesaplara erişim, şifre kırma, güvenlik aşma, bot ya da sahte takipçi hizmeti sunulmaz.</div></aside></div>
+      </section>
+
+      <section class="section trust" aria-labelledby="trust-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Güven yaklaşımı</p><h2 id="trust-title">Gizliliğiniz önemlidir.</h2></div><p class="lead">Kişisel bilgiler, fotoğraflar, belgeler ve hesaplar hassas konulardır. Bu nedenle gereksiz bilgi paylaşımını istemeyen, güvenli yöntemleri öne alan bir yaklaşım benimsenir.</p></div><div class="trust-grid"><article class="trust-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M9 12h6"/></svg><h3>Gereksiz erişim yok</h3><p>Şifrelerin ve hassas bilgilerin gereksiz şekilde paylaşılmasını istemeyen yöntemler tercih edilir.</p></article><article class="trust-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg><h3>Anlaşılır süreç</h3><p>İşlemin hangi adımda olduğu ve hangi seçeneğin neden tercih edildiği açık şekilde paylaşılır.</p></article><article class="trust-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2v20M4 7h16M4 17h16"/><circle cx="12" cy="12" r="9"/></svg><h3>Gerçekçi yönlendirme</h3><p>Her platformun ve cihazın sınırları dikkate alınır; garanti verilemeyen sonuçlar açıkça belirtilir.</p></article></div></div></section>
+
+      <section class="steps" aria-labelledby="steps-title"><div class="container"><p class="eyebrow">Çalışma süreci</p><h2 id="steps-title">İhtiyaçtan kontrole, dört sade adım.</h2><p class="lead">Süreci anlaşılır tutmak için önce ihtiyacı dinler, uygun yöntemi belirler, işlemi uygular ve sonucu birlikte kontrol ederiz.</p><div class="step-grid"><article class="step"><span class="step-number">01</span><h3>İhtiyacınızı iletin</h3><p>Yaşadığınız problemi veya almak istediğiniz hizmeti anlatın.</p></article><article class="step"><span class="step-number">02</span><h3>Durum incelensin</h3><p>İhtiyacınıza göre uygulanabilecek güvenli yöntem belirlensin.</p></article><article class="step"><span class="step-number">03</span><h3>İşlem uygulansın</h3><p>Uygun adımlar, anlaşılır bir ilerleme planıyla hayata geçirilsin.</p></article><article class="step"><span class="step-number">04</span><h3>Birlikte kontrol edelim</h3><p>Sonucu kontrol edip gerekiyorsa sonraki adımları netleştirelim.</p></article></div></div></section>
+
+      <section class="section" id="sss" aria-labelledby="faq-title"><div class="container faq-layout"><div><p class="eyebrow">Sık sorulan sorular</p><h2 id="faq-title">Aklınızdakileri netleştirelim.</h2><p class="lead">Her cihaz, uygulama ve hesap durumu farklı olabilir. Aşağıdaki yanıtlar, hizmet kapsamını anlaşılır kılmak için hazırlanmıştır.</p></div><div class="faq-list"><details><summary>Telefon değiştirirken rehberim kaybolur mu?</summary><div class="answer"><p>Rehberinizin nerede saklandığı ve senkronizasyon ayarları kontrol edilmeden kesin bir yanıt verilemez. Cihaz değişiminden önce kişi yedekleme ve senkronizasyon ayarlarını gözden geçirmek kayıp riskini azaltmaya yardımcı olur.</p></div></details><details><summary>Fotoğraflarım nasıl yedeklenebilir?</summary><div class="answer"><p>Telefonunuzun işletim sistemine ve kullandığınız hizmetlere göre uygun bulut veya yerel yedekleme seçenekleri birlikte değerlendirilir. Amaç, dosyaları kaybolmadan önce düzenli biçimde korumaktır.</p></div></details><details><summary>Android'den iPhone'a kişiler aktarılabilir mi?</summary><div class="answer"><p>Birçok durumda kişiler uygun hesap senkronizasyonu veya aktarım yöntemleriyle taşınabilir. Ancak uygulamaya ve cihaz ayarlarına bağlı olarak aktarılabilecek veriler farklılık gösterebilir.</p></div></details><details><summary>Instagram hesabım askıya alındı; yardımcı olabilir misiniz?</summary><div class="answer"><p>Platformların resmî kurtarma, doğrulama ve itiraz süreçlerini takip etmenize yardımcı olunabilir. Hesabın mutlaka açılacağına ya da belirli bir sonuca dair garanti verilemez.</p></div></details><details><summary>Şifremi unuttuğum hesaba erişim konusunda destek var mı?</summary><div class="answer"><p>Kendi hesabınız için şifre sıfırlama, kurtarma e-postası, telefon numarası ve iki aşamalı doğrulama seçeneklerini güvenli, resmî yöntemlerle değerlendirme desteği sunulur.</p></div></details><details><summary>Sosyal medya hesabımı büyütmek için destek alabilir miyim?</summary><div class="answer"><p>Profil düzeni, içerik yapısı, paylaşım planı ve organik görünürlüğü destekleyebilecek öneriler konusunda çalışma yapılabilir. Takipçi sayısı, keşfet ya da büyüme için kesin sonuç garantisi verilmez.</p></div></details><details><summary>Kartvizit tasarımı yapıyor musunuz?</summary><div class="answer"><p>Evet. Kişisel veya kurumsal kimliğinize uygun, iletişim bilgilerinizi düzenli taşıyan ve baskıya hazırlanabilecek kartvizit tasarımları yapılabilir.</p></div></details><details><summary>İşlemler sırasında kişisel bilgilerim nasıl korunuyor?</summary><div class="answer"><p>Yalnızca gerekli bilgiler üzerinden ilerleyen, şifre gibi hassas verilerin gereksiz paylaşımını istemeyen güvenli yöntemler önceliklendirilir.</p></div></details></div></div></section>
+
+      <section class="contact-section" id="iletisim" aria-labelledby="contact-title"><div class="container"><div class="contact-panel"><div><p class="eyebrow">İletişim</p><h2 id="contact-title">Dijital ihtiyacınızı birlikte netleştirelim.</h2><p>Hangi konuda destek aradığınızı kısaca paylaşın; sosyal medya, telefon değişikliği, yedekleme veya tasarım ihtiyacınız için uygun yolu birlikte belirleyelim.</p></div><aside class="contact-box"><strong>WhatsApp’tan bilgi alın</strong><span>Hizmetler hakkında bilgi almak için WhatsApp üzerinden mesaj gönderebilirsiniz.</span><a class="contact-placeholder" href="https://wa.me/maydilek34" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp üzerinden bize ulaşın"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.2A8.4 8.4 0 1 1 21 11.5Z"/><path d="M9 9.5c.3 1.2 1.2 2.8 3.2 3.7l1-1.1c.2-.2.5-.2.7-.1l1.5.7c.3.1.4.4.3.7-.5 1.3-1.7 1.6-2.6 1.3-3.5-1.1-5.8-4-6.2-6.4-.1-.8.5-1.9 1.7-2.1.3-.1.6.1.7.4l.5 1.6c.1.2 0 .5-.2.6Z"/></svg>Bize Ulaşın</a></aside></div></div></section>
+    </main>
+
+    <footer><div class="container footer-row"><span class="footer-brand">Merve Türk Aydilek · Dijital Destek</span><small>© <span id="year"></span> Tüm hakları saklıdır.</small></div></footer>
+    <script>
+      const button = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.nav-links');
+      button.addEventListener('click', () => {
+        const open = menu.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+      });
+      menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        menu.classList.remove('is-open');
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-label', 'Menüyü aç');
+      }));
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Merve Türk Aydilek">
+  <rect width="64" height="64" rx="16" fill="#102a4d"/>
+  <path d="M12 45V19h7l7 15 7-15h7v26h-6V30l-6 13h-4l-6-13v15z" fill="#fff"/>
+  <path d="M42 45l8-26h4l8 26h-7l-1.4-5h-6.2L46 45zm7-11h3l-1.5-6z" fill="#6bc7ef"/>
+</svg>
